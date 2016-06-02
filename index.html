@@ -1,0 +1,33 @@
+<html>
+    <head>
+    </head>
+        <body>
+        <canvas style = "border: 1px solid blue" width="1000" height="600" id="duk" ></canvas> <script>
+            //Deklalerar och tilldelar variabler för canvas
+            var c = document.getElementById("duk");
+            var ctx = c.getContext("2d");
+            
+            //Måla rektanglar på canvas
+            ctx.fillStyle = "rgba(0, 255, 255, 0.3)"; // rektangel färg, genomskinlig red,green,blue, alfa...
+            ctx.fillRect(10, 10, 100, 20); //en rektangel i övre vänstra hörnet- //(x,y,bredd,höjd) där x=0 längst till häger och y=0 längst upp
+            ctx.fillRect(890, 10, 100, 20); //en rektamgel i övre högra hörnet
+            ctx.fillRect(890, 570, 100, 20); // nedre vänstra hörnet
+            ctx.fillRect(10, 570, 100, 20); //nedre högra hörnet
+            
+            // drar ett streck diagonalt
+            ctx.lineWidth = 10; //tjocklek av strecket
+            ctx.strokeStyle = "rgb(255, 100, 0)"; // gör strecket orange
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(1000,600);
+            ctx.stroke();
+            
+            //Måla en cirkel
+            ctx.beginPath();
+            ctx.arc(500, 300, 200, 0, 2 * Math.PI);
+            ctx.strokeStyle = "rgba(0, 255, 0, 0.5)";
+            ctx.stroke();
+            ctx.fill();
+        </script>   
+    </body>
+</html>
